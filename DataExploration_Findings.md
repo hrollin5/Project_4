@@ -61,3 +61,10 @@ Note: There are lot of records with the invalid DL State value. Below is an exam
 State Shortcuts in the following table are considered valid:
 
 ![Alt text](image.png)
+
+Separating date of stop into year, month, and day.
+
+data_cleaning_binning.ipynb has an example of binning the makes. 
+
+sm_random_forest.ipynb has my attempt at running the random forest model. It keeps having trouble with the categorical 
+variables, so I tried on hot encoding some of them. It then threw the error "Unable to allocate 7.48 GiB for an array with shape (4485, 1790375) and data type uint8"
