@@ -53,6 +53,10 @@ DL State|
           order by 1  
           """).show()
 
+Note: There are lot of records with the invalid DL State value. Below is an example of records with DL State as 'XX'
+
+![Alt text](image-1.png)
+
 
 State Shortcuts in the following table are considered valid:
 
