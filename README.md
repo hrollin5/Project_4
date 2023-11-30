@@ -3,18 +3,23 @@
 ## Project Description
 
 ### Goal
-Use EDA, machine learning, and visualization to analyze a dataset of traffic violations from Maryland from the years 1979 to 2023. 
+Use EDA, machine learning, and visualization to analyze a dataset of traffic violations from Maryland from the years 2012 to 2023. 
 
 ------------
 ## Credits
-I used ChatGPT when I got stuck. The data used was from https://data.montgomerycountymd.gov/.
+ChatGPT was used for some portions for researching approaches to tasks. The data used was from https://data.montgomerycountymd.gov/.
 
 ------------
 ## Softwares Used
 ### Libraries
 Pathlib
 Scikit Learn
+   ensemble.RandomForestClassifier
+   linear_model.LogisticRegression
+   model_selection.train_test_split
+   metrics.confusion_matrix, accuracy_score, classification_report
 Pandas
+matplotlib
 
 ### Language
 Python
@@ -26,14 +31,61 @@ GitLens
 
 ------------
 ## Exploratory Data Analysis
-   -  Read the csv into a dataframe.
-   -  Dropped columns that were deemed to be represented by other columns or columns that were not valuable.
-   -  Dropped safety related violation types so that only violation types of warning and citation are the only rows left.
-      -  'Violation Type' is the target feature.
-   -  Dropped rows with invalid years.
-   -  Removed data that had the latitude and longitude set as zero.
-   -  Converted the 'Date of Stop' and 'Time of Stop' features to Year of Stop, Month of Stop, and Hour of Stop.
-   -
+-  Read the csv into a dataframe.
+-  Dropped columns that were deemed to be represented by other columns or columns that were not valuable.
+-  Dropped safety related violation types so that only violation types of warning and citation are the only
+   rows left.
+-  'Violation Type' is the target feature.
+-  Dropped rows with invalid years.
+-  Removed data that had the latitude and longitude set as zero.
+-  Converted the 'Date of Stop' and 'Time of Stop' features to Year of Stop, Month of Stop, and Hour of Stop.
+-  Dropped rows with a null description.
+-  Used Regex to replace descriptions with specific key words to make the descriptions more uniform for
+   machine learning modelling.
+   -  Examples of some descriptions that were standardardized contain some or all of the words or phrases:
+      -  Speeding: Exceeding Speed Limit, Speed, and Speeding
+      -  Failure to Yield: Fail Yield and Failure Yield
+      -  Learner Permit
+      -  Improper Equipment: Lamp, Headlight, Required Minimum Equipment, and Inoperative
+      -  DUI: Influence Alcohol and Impaired Alcohol
+-  25 groups of descriptions were classified using regex to reduce the number of unique descriptions to 
+   around 5000 descriptions which were then binned to make descriptions with less than 10,000 occurances be classified as 'Other' leaving the top 25 descriptions.
+-  The license plate state feature was categorized into in-state (MD) and out of state (all others).
+-  The Make feature contained many errors. The Make values were manually corrected through makes that had
+   10 or more values in the dataset. The makes with 9 or less values were classified as 'Other'.
+   -  If the make value did not have a clear correction, the value was set to unknown.
+-  The Date of Stop, Driver State, State and Time of Stop features were dropped from the dataframe because the
+   values contained in these columns was represented in other, more meaningful, columns.
+-  The colors of cars were classified into neutral colors and colorful colors.
+-  The resulting dataframe was written to a .csv file called Traffic_Violations_Processed to be used for 
+   machine learning modelling.
+
+## Machine Learning Modelling
+-  The Traffic_Violations_Processed.csv was read into a dataframe.
+-  The dataframe was limited to the columns 'Description', 'Accident', 'Alcohol', 'Search Outcome', 'Violation
+   Type', and 'License Plate State Category'.
+-  The rows with null values had the null value replaced with the word 'None'.
+-  All of the remaining columns were one hot encoded with pd.get_dummies.
+
+### Example of One Hot Encoded Features
+![Alt text](image.png)
+
+-  The features were separated from the target feature and assigned the variable X.
+-  The target feature, 'Violation Type', was assigned the variable y.
+-  The features and target were split into test data and train data with train_test_split.
+-  A random forest model was instatiated, the training data was fit to the model, the model was used to predict
+   the test data, a confusion matrix was calculated and the results of the confusion matrix were displayed.
+
+### Random Forest Confusion Matrix
+   ![Alt text](image-1.png)
+
+-  A logistic regression model was instantiated with the solver 'sag', 200 max iterations, and random state of 1.
+-  The training data was fitted with the logistic regression model, predictions were made with the logistic
+   regression model on the test data, a confusion matrix was calculated and the results of the confusion matrix were displayed.
+
+### Logistic Regression Confusion Matrix
+![Alt text](image-2.png)
+
 
 
 ## Part 2: Updating the Database
