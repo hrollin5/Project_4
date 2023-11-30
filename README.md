@@ -100,7 +100,7 @@ GitLens
 -  A temporary view of the dataframe was created.
 -  Using sql queries, the following was displayed:
    -  The first 5 rows of the dataframe were displayed with a query.
-   
+
       ![Alt text](image-3.png)
 
    -  The total number of rows.
@@ -135,7 +135,7 @@ GitLens
 ![Alt text](image-9.png)
 
 ## Visualizing in Tableau
-https://public.tableau.com/app/profile/samantha.mckay/viz/UpdatedTrafficViolationsM/MapofViolations?publish=yes
+https://public.tableau.com/app/profile/samantha.mckay/viz/UpdatedTrafficViolations/MapofViolations?publish=yes
 
 ### Hours of Accidents and Violations
 ![Alt text](image-10.png)
