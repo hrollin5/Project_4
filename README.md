@@ -100,21 +100,27 @@ GitLens
 -  A temporary view of the dataframe was created.
 -  Using sql queries, the following was displayed:
    -  The first 5 rows of the dataframe were displayed with a query.
+   
       ![Alt text](image-3.png)
 
    -  The total number of rows.
+
       ![Alt text](image-4.png)
 
-   -  The distribution of Violation Types. 
+   -  The distribution of Violation Types.
+
       ![Alt text](image-5.png)
 
    -  The minimum and maximum year of stop in the table.
+
       ![Alt text](image-6.png)
 
    -  The number of distinct descriptions
+
       ![Alt text](image-7.png)
 
    -  The top 25 descriptions.
+
       ![Alt text](image-8.png)
 
    -  The number of violations organized/partitioned by 'Description' with and without partitioning.
