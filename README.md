@@ -160,7 +160,6 @@ https://public.tableau.com/app/profile/samantha.mckay/viz/UpdatedTrafficViolatio
 
 ## Analysis
 -  The random forest model was slightly more accurate than the linear regression model. 
--  The linear regression had better recall for the citation violations.
 -  Hispanic men were the only race/gender group that had more citations than violations.
 -  The five most common makes of vehicle were Toyota, Honda, Chevrolet, Ford, and Nissan.
 -  Most racial groups had a majority of black cars with the exception of Asians having a majority of silver
