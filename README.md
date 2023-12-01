@@ -74,7 +74,7 @@ GitLens
 -  All of the remaining columns were one hot encoded with pd.get_dummies.
 
 ### Example of One Hot Encoded Features
-![Alt text](image.png)
+![Alt text](Images\image.png)
 
 -  The features were separated from the target feature and assigned the variable X.
 -  The target feature, 'Violation Type', was assigned the variable y.
@@ -83,14 +83,14 @@ GitLens
    the test data, a confusion matrix was calculated and the results of the confusion matrix were displayed.
 
 ### Random Forest Confusion Matrix
-   ![Alt text](image-1.png)
+   ![Alt text](Images\image-1.png)
 
 -  A logistic regression model was instantiated with the solver 'sag', 200 max iterations, and random state of 1.
 -  The training data was fitted with the logistic regression model, predictions were made with the logistic
    regression model on the test data, a confusion matrix was calculated and the results of the confusion matrix were displayed.
 
 ### Logistic Regression Confusion Matrix
-![Alt text](image-2.png)
+![Alt text](Images\image-2.png)
 
 ## Pyspark and Partitioning
 -  Spark and Java were installed in google colab and the environmental variables JAVA_HOME and SPARK_HOME were
@@ -101,27 +101,27 @@ GitLens
 -  Using sql queries, the following was displayed:
    -  The first 5 rows of the dataframe were displayed with a query.
 
-      ![Alt text](image-3.png)
+      ![Alt text](Images\image-3.png)
 
    -  The total number of rows.
 
-      ![Alt text](image-4.png)
+      ![Alt text](Images\image-4.png)
 
    -  The distribution of Violation Types.
 
-      ![Alt text](image-5.png)
+      ![Alt text](Images\image-5.png)
 
    -  The minimum and maximum year of stop in the table.
 
-      ![Alt text](image-6.png)
+      ![Alt text](Images\image-6.png)
 
    -  The number of distinct descriptions
 
-      ![Alt text](image-7.png)
+      ![Alt text](Images\image-7.png)
 
    -  The top 25 descriptions.
 
-      ![Alt text](image-8.png)
+      ![Alt text](Images\image-8.png)
 
    -  The number of violations organized/partitioned by 'Description' with and without partitioning.
       -  Without partitioning, the query took 9.3 seconds.
@@ -132,31 +132,31 @@ GitLens
 
 ### Partitioning with Parquet
 
-![Alt text](image-9.png)
+![Alt text](Images\image-9.png)
 
 ## Visualizing in Tableau
 https://public.tableau.com/app/profile/samantha.mckay/viz/UpdatedTrafficViolations/MapofViolations?publish=yes
 
 ### Hours of Accidents and Violations
-![Alt text](image-10.png)
+![Alt text](Images\image-10.png)
 
 ### Accidents and Fatalities by Season
-![Alt text](image-11.png) 
+![Alt text](Images\image-11.png) 
 
 ### Violations Received by Race and Gender and Racial Car Color Distribution
-![Alt text](image-12.png)
+![Alt text](Images\image-12.png)
 
 ### Make Distribution by Gender and Violations Received by Gender
-![Alt text](image-13.png)
+![Alt text](Images\image-13.png)
 
 ### Make Distribution by License Plate Category
-![Alt text](image-14.png)
+![Alt text](Images\image-14.png)
 
 ### Map of Violations
-![Alt text](image-15.png)
+![Alt text](Images\image-15.png)
 
 ### Total Accidents by Vehicle Year
-![Alt text](image-16.png)
+![Alt text](Images\image-16.png)
 
 ## Analysis
 -  The random forest model was slightly more accurate than the linear regression model. 
